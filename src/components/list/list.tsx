@@ -8,7 +8,14 @@ function List({ tarefas }: { tarefas: Itarefa[] }) {
       <h2>Estudos do dia</h2>
       <ul>
         {tarefas.map((item, index) => (
-          <Item key={index} tarefa={item.tarefa} tempo={item.tempo} />
+          <Item
+            key={index}
+            tarefa={item.tarefa}
+            tempo={item.tempo}
+            selecionado={item.selecionado}
+            completado={item.completado}
+            id={item.id}
+          />
         ))}
       </ul>
     </aside>
