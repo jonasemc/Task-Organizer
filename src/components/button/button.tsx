@@ -1,9 +1,16 @@
 import React from "react";
 import style from "./button.module.scss";
 
-class Button extends React.Component {
+class Button extends React.Component<{
+  type?: "button" | "submit" | "reset" | undefined;
+}> {
   render() {
-    return <button className={style.botao}>{this.props.children}</button>;
+    const { type = "button" } = this.props;
+    return (
+      <button type={type} className={style.botao}>
+        {this.props.children}
+      </button>
+    );
   }
 }
 
